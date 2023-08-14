@@ -6,15 +6,19 @@ import Stack from '@mui/material/Stack'
 import Switch from '@mui/material/Switch';
 import Typography from '@mui/material/Typography';
 import FormControlLabel from '@mui/material/FormControlLabel'
+import AutocompleteExample from './AutoComplete'
+import Accordian from './Accordian'
 import ButtonGroupControls from './ButtonGroupControls'
 import ButtonGroupOperations from './ButtonGroupOperations'
 import Dialog from './Dialog'
-import Tabs from './Tabs'
-import AutocompleteExample from './AutoComplete'
-import Accordian from './Accordian'
+import DialogEdit from './DialogEdit'
 import Logo from './Logo'
+import Tabs from './Tabs'
 import TimeLine from './Timeline'
 import Tree from './Tree'
+
+
+
 
 
 function App({changeTheme, darkTheme}) {
@@ -41,7 +45,7 @@ function App({changeTheme, darkTheme}) {
             </Typography>
             <Logo/>
             <Tabs
-              tabList = {['General', 'Timeline', 'Tree']}
+              tabList = {['General', 'Timeline', 'Tree', 'SideDrawer']}
               currentTab={(tabNumber)=>setCurrentTab(tabNumber)}
               variant = 'center'
             />
@@ -62,7 +66,15 @@ function App({changeTheme, darkTheme}) {
                     labelPlacement="end"
                   />
                 </Typography>
-                <Dialog/>
+                <Stack
+                  spacing={3}
+                  direction="row"
+                  justifyContent="center"
+                  alignItems="center"
+                >
+                  <Dialog/>
+                  <DialogEdit/>
+                </Stack>
                 <AutocompleteExample/>
                 <Accordian/>
               </Stack>

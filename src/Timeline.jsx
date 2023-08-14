@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import Box from '@mui/material/Box';
-import IconButton from '@mui/material/IconButton';
+import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Paper';
 import Timeline from '@mui/lab/Timeline';
 import TimelineItem from '@mui/lab/TimelineItem';
@@ -10,9 +10,9 @@ import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 import Typography from '@mui/material/Typography';
-import EngineeringIcon from '@mui/icons-material/Engineering';
 import ArchitectureIcon from '@mui/icons-material/Architecture';
-import EditIcon from '@mui/icons-material/Edit';
+import EngineeringIcon from '@mui/icons-material/Engineering';
+import DialogEdit from './DialogEdit'
 
 
 export default function CustomizedTimeline() {
@@ -42,9 +42,7 @@ export default function CustomizedTimeline() {
                 10.01.2023
               </Typography>
               <Box>
-                <IconButton aria-label="edit" size='small'>
-                  <EditIcon fontSize="inherit" />
-                </IconButton>
+                <DialogEdit/>
               </Box>
           </TimelineOppositeContent>
           <TimelineSeparator>
@@ -58,9 +56,12 @@ export default function CustomizedTimeline() {
             </TimelineDot>
             <TimelineConnector />
           </TimelineSeparator>
-            <TimelineContent sx={{ py: '12px', px: 2, lineHeight:'1em' }}>
-            <Typography variant="caption">
-              Submit drawings to the structural engineer, waiting for the feedback</Typography>
+          <TimelineContent sx={{ py: '12px', px: 2, lineHeight:'1em' }} >
+          <Paper elevation={active === 0 ? 3 : 1} sx={{padding:'6px', borderRadius:'10px'}}>
+              <Typography variant="caption">
+                Submit drawings to the structural engineer, waiting for the feedback
+              </Typography>
+            </Paper>
           </TimelineContent>
         </TimelineItem>
         <TimelineItem>
@@ -76,9 +77,7 @@ export default function CustomizedTimeline() {
                 10.01.2023
               </Typography>
               <Box>
-                <IconButton aria-label="edit" size='small'>
-                  <EditIcon fontSize="inherit" />
-                </IconButton>
+                <DialogEdit/>
               </Box>
           </TimelineOppositeContent>
           <TimelineSeparator>
@@ -92,10 +91,12 @@ export default function CustomizedTimeline() {
             </TimelineDot>
             <TimelineConnector />
           </TimelineSeparator>
-          <TimelineContent sx={{ py: '12px', px: 2}}>
-            <Typography variant="caption" >
-              Waiting for the archtiect of record feedback
-            </Typography>
+          <TimelineContent sx={{ py: '12px', px: 2, lineHeight:'1em' }} >
+          <Paper elevation={active === 1 ? 3 : 1} sx={{padding:'6px', borderRadius:'10px'}}>
+              <Typography variant="caption">
+                Submit drawings to the structural engineer, waiting for the feedback
+              </Typography>
+            </Paper>
           </TimelineContent>
         </TimelineItem>
         <TimelineItem>
@@ -111,9 +112,7 @@ export default function CustomizedTimeline() {
                 10.01.2023
               </Typography>
               <Box>
-                <IconButton aria-label="edit" size='small'>
-                  <EditIcon fontSize="inherit" />
-                </IconButton>
+                <DialogEdit/>
               </Box>
           </TimelineOppositeContent>
           <TimelineSeparator>
@@ -127,10 +126,12 @@ export default function CustomizedTimeline() {
             </TimelineDot>
             <TimelineConnector />
           </TimelineSeparator>
-          <TimelineContent sx={{ py: '12px', px: 2}}>
-            <Typography variant="caption" >
-              Waiting for the archtiect of record feedback
-            </Typography>
+          <TimelineContent sx={{ py: '12px', px: 2, lineHeight:'1em' }} >
+            <Paper elevation={active === 2 ? 3 : 1} sx={{padding:'6px', borderRadius:'10px',}}>
+              <Typography variant="caption">
+                Waiting for the architect of record
+              </Typography>
+            </Paper>
           </TimelineContent>
         </TimelineItem>
       </Timeline>

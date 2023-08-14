@@ -45,7 +45,7 @@ function App({changeTheme, darkTheme}) {
             </Typography>
             <Logo/>
             <Tabs
-              tabList = {['General', 'Timeline', 'Tree', 'SideDrawer']}
+              tabList = {['General', 'Timeline', 'Tree']}
               currentTab={(tabNumber)=>setCurrentTab(tabNumber)}
               variant = 'center'
             />
